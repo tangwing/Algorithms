@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1356384810 source:d:\projects\algorithms\sort\main.cpp
+	<iostream>
+	"insertionSort.cpp"
+
+1356383364 d:\projects\algorithms\sort\sort.h
+
+1356385280 source:d:\projects\algorithms\sort\insertionsort.cpp
+
+1356384981 d:\projects\algorithms\sort\insertionsort.cpp
+	<iostream>
+
