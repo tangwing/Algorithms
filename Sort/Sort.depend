@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1356465548 source:d:\projects\algorithms\sort\main.cpp
+1356562710 source:d:\projects\algorithms\sort\main.cpp
 	<iostream>
 	"sort.h"
 
-1356465370 d:\projects\algorithms\sort\sort.h
+1356562714 d:\projects\algorithms\sort\sort.h
 	"insertionSort.cpp"
 	"selectionSort.cpp"
+	"mergeSort.cpp"
 
 1356385280 source:d:\projects\algorithms\sort\insertionsort.cpp
 
@@ -14,4 +15,10 @@
 1356465521 d:\projects\algorithms\sort\selectionsort.cpp
 
 1356465521 source:d:\projects\algorithms\sort\selectionsort.cpp
+
+1356562946 d:\projects\algorithms\sort\mergesort.cpp
+	<string.h>
+
+1356562946 source:d:\projects\algorithms\sort\mergesort.cpp
+	<string.h>
 

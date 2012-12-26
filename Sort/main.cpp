@@ -16,7 +16,8 @@ int main()
     int itab[5] = {5,3,4,1,2};
     //sort_insertion(tab,5,true);
     //sort_selection(tab,5,true);
-    sort_selection(itab,5,true);
-    printTab(itab, 5);
+    //sort_selection(itab,5,true);
+    sort_merge(tab,5);
+    printTab(tab, 5);
     return 0;
 }

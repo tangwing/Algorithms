@@ -34,6 +34,7 @@
 		</Compiler>
 		<Unit filename="insertionSort.cpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="mergeSort.cpp" />
 		<Unit filename="selectionSort.cpp" />
 		<Unit filename="sort.h" />
 		<Extensions>
