@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Sort" />
+		<Option title="Algo" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -32,11 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="insertionSort.cpp" />
-		<Unit filename="main.cpp" />
-		<Unit filename="mergeSort.cpp" />
-		<Unit filename="selectionSort.cpp" />
-		<Unit filename="sort.h" />
+		<Unit filename="include\algo.h" />
+		<Unit filename="src\main.cpp" />
+		<Unit filename="src\search_binary.cpp" />
+		<Unit filename="src\sort\sort_insertion.cpp" />
+		<Unit filename="src\sort\sort_merge.cpp" />
+		<Unit filename="src\sort\sort_selection.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1356562972 source:d:\projects\algorithms\sort\main.cpp
+	<iostream>
+	"sort.h"
+
+1356562714 d:\projects\algorithms\sort\sort.h
+	"insertionSort.cpp"
+	"selectionSort.cpp"
+	"mergeSort.cpp"
+
+1356385280 source:d:\projects\algorithms\sort\insertionsort.cpp
+
+1356385280 d:\projects\algorithms\sort\insertionsort.cpp
+
+1356465521 d:\projects\algorithms\sort\selectionsort.cpp
+
+1356465521 source:d:\projects\algorithms\sort\selectionsort.cpp
+
+1356562946 d:\projects\algorithms\sort\mergesort.cpp
+	<string.h>
+
+1356562946 source:d:\projects\algorithms\sort\mergesort.cpp
+	<string.h>
+
+1356641039 source:d:\projects\algorithms\algo\src\search_binary.cpp
+
+1356385280 source:d:\projects\algorithms\algo\src\sort\sort_insertion.cpp
+
+1356564503 source:d:\projects\algorithms\algo\src\sort\sort_merge.cpp
+	<string.h>
+
+1356465521 source:d:\projects\algorithms\algo\src\sort\sort_selection.cpp
+
+1356639526 source:d:\projects\algorithms\algo\src\main.cpp
+	<iostream>
+	"../include/algo.h"
+
+1356640519 d:\projects\algorithms\algo\include\algo.h
+	"../src/sort/sort_insertion.cpp"
+	"../src/sort/sort_selection.cpp"
+	"../src/sort/sort_merge.cpp"
+
+1356385280 d:\projects\algorithms\algo\src\sort\sort_insertion.cpp
+
+1356465521 d:\projects\algorithms\algo\src\sort\sort_selection.cpp
+
+1356564503 d:\projects\algorithms\algo\src\sort\sort_merge.cpp
+	<string.h>
+

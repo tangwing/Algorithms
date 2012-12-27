@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-#include "sort.h"
+#include "../include/algo.h"
+
 template <class T>
 void printTab(T*tab, int size)
 {
@@ -17,7 +18,12 @@ int main()
     //sort_insertion(tab,5,true);
     //sort_selection(tab,5,true);
     //sort_selection(itab,5,true);
-    sort_merge(tab,5);
-    printTab(tab, 5);
+    sort_merge(itab,5);
+    printTab(itab, 5);
+    int i = search_binary_iterative(itab,5,4);
+    cout<<"The index of 4 is : "<<i<<endl;
+    i = search_binary_recursive(itab,5,3);
+    cout<<"The index of 3 is : "<<i<<endl;
+
     return 0;
 }
