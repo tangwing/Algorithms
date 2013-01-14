@@ -1,6 +1,5 @@
-#include "../src/sort/sort_insertion.cpp"
-#include "../src/sort/sort_selection.cpp"
-#include "../src/sort/sort_merge.cpp"
+#ifndef SEARCH_H
+#define SEARCH_H
 
 /**Binary search, iterative version
 *@param tab The table to search from, sorted in increasing order.
@@ -19,3 +18,5 @@ int search_binary_iterative(int*tab, int n, int target);
 *@note This is the recursive version
 */
 int search_binary_recursive(int*tab, int n, int target);
+
+#endif

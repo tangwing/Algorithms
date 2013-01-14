@@ -1,3 +1,4 @@
+
 /**Binary search, iterative version
 *@param tab The table to search from, sorted in increasing order.
 *@param n The number of elements in tab

@@ -32,12 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include\algo.h" />
+		<Unit filename="inc\algo.h" />
+		<Unit filename="inc\queue.h" />
+		<Unit filename="inc\search.h" />
+		<Unit filename="inc\sort.h" />
 		<Unit filename="src\main.cpp" />
+		<Unit filename="src\queue.cpp" />
 		<Unit filename="src\search_binary.cpp" />
-		<Unit filename="src\sort\sort_insertion.cpp" />
-		<Unit filename="src\sort\sort_merge.cpp" />
-		<Unit filename="src\sort\sort_selection.cpp" />
+		<Unit filename="src\sort.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
