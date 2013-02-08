@@ -2,11 +2,13 @@
 using namespace std;
 
 #include "../inc/algo.h"
+#include <cstdlib>
 
 
 int main()
 {
 
-    testQueue();
+    //testQueue();
+    //system("dir");
     return 0;
 }

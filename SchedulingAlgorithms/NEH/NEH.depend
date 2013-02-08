@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1354746358 source:c:\users\congqi\documents\c++\tp\neh\main.c
+	<stdio.h>
+	<stdlib.h>
+	"NEH.h"
+
+1354744209 c:\users\congqi\documents\c++\tp\neh\neh.h
+	<stdlib.h>
+
+1354746307 source:c:\users\congqi\documents\c++\tp\neh\neh.c
+	"NEH.h"
+	<limits.h>
+
