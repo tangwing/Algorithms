@@ -1,52 +1,99 @@
 #ifndef SORT_H
 #define SORT_H
+#include <iostream>
+#include<string.h>
+using namespace std;
 
+//find the index of the left 'son'
+//from the current heap node index
+#define LEFT(i) (i*2+1)
+#define RIGHT(i) ((i+1)*2)
+#define UP(i) ((i-1)/2)
+#define EXCHANGE(tab,i,j) {int TMP=tab[i]; tab[i]=tab[j]; tab[j]=TMP;}
+
+/**A sub fonction which can make the tree whose root index is
+* 'index' a max_heap. We assume that the two subtrees of root
+* are already heapified. O(lg(n))
+*@param tab The table containing the heap
+*@param size_heap the size of the table
+*@param index the index of the root node of the tree to be heapified
+*/
+template <typename T>
+void max_heapify(T *tab, int size_heap, int index)
+{
+    int l, r, max;
+    l = LEFT(index);
+    r = RIGHT(index);
+    if (l<size_heap && tab[l]>tab[index]) max = l;
+    else max = index;
+    if (r<size_heap && tab[r]>tab[max]) max = r;
+    if (max != index)
+    {//Send down the root node
+        EXCHANGE(tab, max, index);
+        max_heapify(tab, size_heap, max);
+    }
+}
 
 
 /**Heap sort. Using max_heap, sort the table to increasing order.
 *@param tab The table to be sorted
 *@param size the size of the table
 */
-void sort_heap_max(int *tab, int size);
+template <typename T>
+void sort_heap_max(T *tab, int size)
+{
+    //Build max_heap, O(n)
+    int i = size / 2 - 1;
+    while (i >= 0)
+    {
+        max_heapify(tab, size, i--);
+    }
+
+    //Sort : nlg(n)
+    for (i = size - 1; i>0; i--)
+    {
+        EXCHANGE(tab, 0, i);
+        max_heapify(tab, i, 0);
+    }
+}
 
 /**The INSERTION-SORT algorithm.
 *@param tab A pointer to the table to sort
 *@param length The length of the table
 *@param isIncreasing A flag value which indicate the order,
-            no-0 value means to sort in the increasing order.
+no-0 value means to sort in the increasing order.
 *@note The data will be sorted in the same table
 */
 template <typename T>
 void sort_insertion(T *tab, int length, bool isIncreasing)
 {
-    if(length>1)
+    if (length>1)
     {
         T key;//The element to be inserted.
         int iKey;//The index of the element to be inserted
         int iPos;//The index of the position to insert an element
         //The first element is obviously sorted already
-        for(iKey = 1; iKey < length; iKey++)
+        for (iKey = 1; iKey < length; iKey++)
         {
 
             key = tab[iKey];
-            iPos = iKey-1;
-            while(iPos >= 0 )
+            iPos = iKey - 1;
+            while (iPos >= 0)
             {
                 if (isIncreasing && tab[iPos] <= key)
-                	break;
+                    break;
                 else if (!isIncreasing && tab[iPos]>key)
-                	break;
+                    break;
                 else
-                    tab[iPos+1] = tab[iPos];
+                    tab[iPos + 1] = tab[iPos];
                 iPos--;
             }
-            tab[iPos+1] = key;
+            tab[iPos + 1] = key;
         }
     }
 }
 
 
-#include<string.h>
 /**A sub-function of merge-sort algo, merge two sorted sub-lists (connected)
 * to one.
 *@param tab The table to sort, entry and result
@@ -58,48 +105,49 @@ void sort_insertion(T *tab, int length, bool isIncreasing)
 template <class T>
 void merge(T *tab, int indexBegin, int indexMid, int indexEnd)
 {
-    int length = indexEnd-indexBegin+1;
+    int length = indexEnd - indexBegin + 1;
     T* tabMerged = new T[length];// (T*)malloc(sizeof(T)*length);
     int i, i1, i2;
-    for(i=0, i1=indexBegin, i2=indexMid+1; i<length && i1 <= indexMid && i2 <= indexEnd; i++ )
+    for (i = 0, i1 = indexBegin, i2 = indexMid + 1; i<length && i1 <= indexMid && i2 <= indexEnd; i++)
     {
-        if(tab[i1]<=tab[i2])
+        if (tab[i1] <= tab[i2])
         {
             tabMerged[i] = tab[i1];
             i1++;
-        }else
+        }
+        else
         {
             tabMerged[i] = tab[i2];
             i2++;
         }
     }
-    if(i1 > indexMid)
+    if (i1 > indexMid)
     {
         //copy the rest of List2 to tabMerged
-        while(i2<=indexEnd)
-            tabMerged[i++]=tab[i2++];
+        while (i2 <= indexEnd)
+            tabMerged[i++] = tab[i2++];
     }
-    else if(i2 > indexEnd)
+    else if (i2 > indexEnd)
     {
         //copy the rest of List1 to tabMerged
-        while(i1<=indexMid)
-            tabMerged[i++]=tab[i1++];
+        while (i1 <= indexMid)
+            tabMerged[i++] = tab[i1++];
     }
-    memcpy(tab+indexBegin, tabMerged, sizeof(T)*length);
-    delete [] tabMerged;
+    memcpy(tab + indexBegin, tabMerged, sizeof(T)*length);
+    delete[] tabMerged;
 }
 
 /**The SELECTION-SORT algorithm.
 *@param tab A pointer to the table to sort
 *@param length The length of the table
 *@param isIncreasing A flag value which indicate the order,
-            no-0 value means to sort in the increasing order.
+no-0 value means to sort in the increasing order.
 *@note The data will be sorted in the same table
 */
 template <typename T>
 void sort_selection(T *tab, int length, bool isIncreasing)
 {
-    if(length>1)
+    if (length>1)
     {
         T key;//The element selected during each loop.
         int iKey;//The position of the current selected element
@@ -107,17 +155,17 @@ void sort_selection(T *tab, int length, bool isIncreasing)
         int iLoop2;
 
         //The last element is obviously sorted already
-        for(iLoop = 0; iLoop < length-1; iLoop++)
+        for (iLoop = 0; iLoop < length - 1; iLoop++)
         {
 
             key = tab[iLoop];
             iKey = iLoop;
-            for(iLoop2 = iLoop+1; iLoop2<length; iLoop2++)
+            for (iLoop2 = iLoop + 1; iLoop2<length; iLoop2++)
             {
                 if (isIncreasing && tab[iLoop2]<key ||
                     !isIncreasing && tab[iLoop2]>key)
                 {
-                	key = tab[iLoop2];
+                    key = tab[iLoop2];
                     iKey = iLoop2;
                 }
             }
@@ -128,7 +176,6 @@ void sort_selection(T *tab, int length, bool isIncreasing)
 }
 
 
-
 /**Merge-sort, increasing order
 *@param tab The table to sort
 *@param length The length of the table
@@ -137,11 +184,11 @@ void sort_selection(T *tab, int length, bool isIncreasing)
 template <class T>
 void sort_merge(T *tab, int length)
 {
-    if(length<=1)return;
-    int indexMid = (length-1)/2;
-    sort_merge(tab, indexMid+1);
-    sort_merge(tab+indexMid+1,length-indexMid-1);
-    merge(tab,0,indexMid,length-1);
+    if (length <= 1)return;
+    int indexMid = (length - 1) / 2;
+    sort_merge(tab, indexMid + 1);
+    sort_merge(tab + indexMid + 1, length - indexMid - 1);
+    merge(tab, 0, indexMid, length - 1);
 }
 
 ///I also try to write a version in Prolog

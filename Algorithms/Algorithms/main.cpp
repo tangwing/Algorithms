@@ -1,14 +1,12 @@
-#include <iostream>
-using namespace std;
-
-#include "../inc/algo.h"
 #include <cstdlib>
-
+#include <iostream>
+#include "test.h"
+using namespace std;
 
 int main()
 {
 
-    //testQueue();
+    testQueue();
     //system("dir");
     return 0;
 }
