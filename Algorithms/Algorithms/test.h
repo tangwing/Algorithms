@@ -2,6 +2,7 @@
 #define TEST_H
 #include "sort.h"
 #include "pqueue.h"
+#include "graph.h"
 
 template <class T>
 void printTab(T*tab, int size)

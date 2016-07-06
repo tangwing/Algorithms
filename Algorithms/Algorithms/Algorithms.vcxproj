@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ds.h" />
+    <ClInclude Include="graph.h" />
     <ClInclude Include="pqueue.h" />
     <ClInclude Include="search.h" />
     <ClInclude Include="sort.h" />

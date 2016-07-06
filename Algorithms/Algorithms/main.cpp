@@ -6,7 +6,8 @@ using namespace std;
 int main()
 {
 
-    testQueue();
+    Graph::test();
+    //testQueue();
     //system("dir");
     return 0;
 }
