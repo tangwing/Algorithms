@@ -1,0 +1,18 @@
+digraph g{
+a->b[minlen=2,label=10];
+a->d[minlen=2,label=5];
+b->c[minlen=2,label=1];
+b->d[minlen=2,label=2];
+c->e[minlen=2,label=4];
+d->b[minlen=2,label=3];
+d->c[minlen=2,label=9];
+d->e[minlen=2,label=2];
+e->a[minlen=2,label=7];
+e->c[minlen=2,label=6];
+a[fixedsize=true, width=0.3, height=0.3];
+b[fixedsize=true, width=0.3, height=0.3];
+c[fixedsize=true, width=0.3, height=0.3];
+d[fixedsize=true, width=0.3, height=0.3];
+e[fixedsize=true, width=0.3, height=0.3];
+
+}
